@@ -124,7 +124,7 @@
      </property>
     </item>
    </widget>
-   <widget class="QComboBox" name="algorithm_type_selection_box">
+   <widget class="QComboBox" name="algorithm_selection_box">
     <property name="geometry">
      <rect>
       <x>300</x>
