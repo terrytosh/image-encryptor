@@ -110,6 +110,15 @@ selection-color: rgb(255, 255, 255);</string>
       <height>31</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Calibri Light</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
     <item>
      <property name="text">
       <string>Encryption</string>
@@ -129,6 +138,15 @@ selection-color: rgb(255, 255, 255);</string>
       <width>221</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Calibri Light</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <item>
      <property name="text">
@@ -165,6 +183,9 @@ selection-color: rgb(255, 255, 255);</string>
       <family>Calibri Light</family>
       <pointsize>20</pointsize>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>Execute Action</string>
