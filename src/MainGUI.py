@@ -9,6 +9,9 @@ class MainGUI(QMainWindow):
         uic.loadUi(ui_file, self)
         self.show()
 
+        self.exit_action.triggered.connect(qApp.quit)
+
+        print("From MainGUI...")
         self.execute_action_button.clicked.connect(self.on_execute_action_button_clicked)
 
     def on_execute_action_button_clicked(self):
