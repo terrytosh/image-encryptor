@@ -12,6 +12,7 @@ class MainGUI(QMainWindow):
 def main():
     app = QApplication([])
     window = MainGUI()
+    window.setWindowTitle("Terry's Image Encryptor!")
     app.exec_()
 
 if __name__ == '__main__':

@@ -7,11 +7,23 @@
     <x>0</x>
     <y>0</y>
     <width>558</width>
-    <height>307</height>
+    <height>393</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(170, 255, 255);
+color: rgb(0, 0, 0);
+selection-background-color: rgb(0, 0, 0);
+selection-color: rgb(255, 255, 255);</string>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Rounded</enum>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="input_label_1">
@@ -121,16 +133,25 @@
      </property>
     </item>
    </widget>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>558</width>
-     <height>25</height>
-    </rect>
-   </property>
+   <widget class="QPushButton" name="execute_action_button">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>268</y>
+      <width>391</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Calibri Light</family>
+      <pointsize>20</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Execute Action</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
