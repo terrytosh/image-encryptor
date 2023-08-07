@@ -22,5 +22,6 @@ class MainGUI(QMainWindow):
         self.execute_action_button.clicked.connect(self.on_execute_action_button_clicked)
 
     def on_execute_action_button_clicked(self):
+        # Print current selections from QComboBox's
         print(self.action_selection_box.currentText())
         print(self.algorithm_selection_box.currentText())
