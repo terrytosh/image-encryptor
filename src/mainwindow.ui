@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>598</width>
-    <height>472</height>
+    <width>597</width>
+    <height>586</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -35,8 +35,8 @@
    <property name="acceptDrops">
     <bool>false</bool>
    </property>
-   <layout class="QFormLayout" name="formLayout">
-    <item row="0" column="0" colspan="2">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
      <widget class="QLabel" name="input_label_1">
       <property name="font">
        <font>
@@ -49,8 +49,14 @@
       </property>
      </widget>
     </item>
-    <item row="1" column="1">
+    <item>
      <widget class="QComboBox" name="action_selection_box">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="font">
        <font>
         <family>Calibri Light</family>
@@ -81,7 +87,7 @@
       </item>
      </widget>
     </item>
-    <item row="2" column="0" colspan="2">
+    <item>
      <widget class="QLabel" name="input_label_2">
       <property name="font">
        <font>
@@ -94,8 +100,14 @@
       </property>
      </widget>
     </item>
-    <item row="3" column="1">
+    <item>
      <widget class="QComboBox" name="algorithm_selection_box">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="font">
        <font>
         <family>Calibri Light</family>
@@ -130,10 +142,23 @@
       </item>
      </widget>
     </item>
-    <item row="5" column="1">
+    <item>
+     <widget class="QLabel" name="input_label_3">
+      <property name="font">
+       <font>
+        <family>Calibri Light</family>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>File Select:</string>
+      </property>
+     </widget>
+    </item>
+    <item>
      <widget class="QLabel" name="drag_and_drop_label">
       <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
         <horstretch>0</horstretch>
         <verstretch>1</verstretch>
        </sizepolicy>
@@ -147,6 +172,9 @@
       <property name="acceptDrops">
        <bool>true</bool>
       </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(255, 255, 255);
 border: 2px dashed gray;</string>
@@ -159,21 +187,36 @@ border: 2px dashed gray;</string>
       </property>
      </widget>
     </item>
-    <item row="4" column="0" colspan="2">
-     <widget class="QLabel" name="input_label_3">
+    <item>
+     <widget class="QPushButton" name="select_output_directory_button">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="font">
        <font>
         <family>Calibri Light</family>
         <pointsize>20</pointsize>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(159, 159, 159);</string>
+      </property>
       <property name="text">
-       <string>File Select:</string>
+       <string>Press to Select Output Directory</string>
       </property>
      </widget>
     </item>
-    <item row="7" column="0" colspan="2">
+    <item>
      <widget class="QPushButton" name="execute_action_button">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="font">
        <font>
         <family>Calibri Light</family>
@@ -208,7 +251,7 @@ border: 2px dashed gray;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>598</width>
+     <width>597</width>
      <height>24</height>
     </rect>
    </property>
