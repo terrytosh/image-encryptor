@@ -15,7 +15,7 @@ class MainGUI(QMainWindow):
         # Quit app when 'Exit' QAction clicked in the toolbar
         self.exit_action.triggered.connect(qApp.quit)
 
-        # Connect 'Execute Action' button to on_execute_action_button_cliked() function
+        # Connect 'Execute Action' button to handle_execute_action_button_cliked() function
         self.execute_action_button.clicked.connect(self.handle_execute_action_button_clicked)
 
     def handle_execute_action_button_clicked(self):
