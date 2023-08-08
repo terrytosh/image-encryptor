@@ -16,13 +16,13 @@ class MainGUI(QMainWindow):
         # Quit app when 'Exit' QAction clicked in the toolbar
         self.exit_action.triggered.connect(qApp.quit)
 
-        print("From MainGUI...")
+        print("Constructing MainGUI Class Object...")
 
         # Connect 'Execute Action' button to on_execute_action_button_cliked() function
         self.execute_action_button.clicked.connect(self.handle_execute_action_button_clicked)
 
     def handle_execute_action_button_clicked(self):
         # Print current selections from QComboBox's
-        print("handle_execute_action_button_clicked...")
+        print("handle_execute_action_button_clicked Called...")
         print(self.action_selection_box.currentText())
         print(self.algorithm_selection_box.currentText())
