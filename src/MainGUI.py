@@ -1,6 +1,5 @@
 from PyQt5.QtWidgets import *
 from PyQt5 import uic
-import os
 
 class MainGUI(QMainWindow):
     def __init__(self):
