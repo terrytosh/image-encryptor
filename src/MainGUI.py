@@ -19,9 +19,10 @@ class MainGUI(QMainWindow):
         print("From MainGUI...")
 
         # Connect 'Execute Action' button to on_execute_action_button_cliked() function
-        self.execute_action_button.clicked.connect(self.on_execute_action_button_clicked)
+        self.execute_action_button.clicked.connect(self.handle_execute_action_button_clicked)
 
-    def on_execute_action_button_clicked(self):
+    def handle_execute_action_button_clicked(self):
         # Print current selections from QComboBox's
+        print("handle_execute_action_button_clicked...")
         print(self.action_selection_box.currentText())
         print(self.algorithm_selection_box.currentText())
