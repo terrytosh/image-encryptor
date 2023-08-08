@@ -6,9 +6,8 @@ class MainGUI(QMainWindow):
     def __init__(self):
         super(MainGUI, self).__init__()
 
-        # Create file path to UI file
-        ui_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "mainwindow.ui")
-        uic.loadUi(ui_file, self)
+        # Load UI from 'src'mainwindow.ui'
+        uic.loadUi("src/mainwindow.ui", self)
 
         # Display 'mainwindow' UI
         self.show()
