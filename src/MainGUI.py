@@ -15,18 +15,18 @@ class MainGUI(QMainWindow):
         # Quit app when 'Exit' QAction clicked in the toolbar
         self.exit_action.triggered.connect(qApp.quit)
 
-        # Connect 'Execute Action' button to handle_execute_action_button_cliked()
-        self.execute_action_button.clicked.connect(self.handle_execute_action_button_clicked)
+        # Connect 'Execute Action' button to handle_execute_action()
+        self.execute_action_button.clicked.connect(self.handle_execute_action)
 
-        # Connect 'Select Output Directory' button to handle_select_output_directory_button_clicked()
-        self.select_output_directory_button.clicked.connect(self.handle_select_output_directory_button_clicked)
+        # Connect 'Select Output Directory' button to handle_select_output_directory()
+        self.select_output_directory_button.clicked.connect(self.handle_select_output_directory)
 
-    def handle_execute_action_button_clicked(self):
+    def handle_execute_action(self):
         # Print current selections from QComboBox's
         print(self.action_selection_box.currentText())
         print(self.algorithm_selection_box.currentText())
     
-    def handle_select_output_directory_button_clicked(self):
+    def handle_select_output_directory(self):
         print("Handling output direction selection...")
         options = QFileDialog.Options()
         options |= QFileDialog.ShowDirsOnly | QFileDialog.DontUseNativeDialog
