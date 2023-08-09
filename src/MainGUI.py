@@ -22,10 +22,17 @@ class MainGUI(QMainWindow):
         # Connect 'Select Output Directory' button to handle_select_output_directory()
         self.select_output_directory_button.clicked.connect(self.handle_select_output_directory)
 
+        # Initialize instance variables
+        self.selected_image_file = ""
+        self.output_directory = ""
+
     def handle_execute_action(self):
         # Print current selections from QComboBox's
         print(self.action_selection_box.currentText())
         print(self.algorithm_selection_box.currentText())
+        # Print user selected image file and output directory
+        print(self.selected_image_file)
+        print(self.output_directory)
 
     def handle_file_select(self):
         # print("Handling file selection...")
@@ -38,6 +45,7 @@ class MainGUI(QMainWindow):
 
         if selected_image_file:
             # print("Selected Image File:", selected_image_file)
+            self.selected_image_file = selected_image_file
             self.selected_file_label.setText(selected_image_file) # Modify label to show path of selected image file
         else:
             QMessageBox.warning(self, "Warning!", "No image file was selected.") # Warn user that no image file was selected
@@ -51,6 +59,7 @@ class MainGUI(QMainWindow):
 
         if output_directory:
             # print("Selected Output Directory:", output_directory)
+            self.output_directory = output_directory
             self.selected_output_directory_label.setText(output_directory)
         else:
             QMessageBox.warning(self, "Warning!", "No output directory was selected.")
