@@ -113,7 +113,8 @@
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(197, 197, 197);</string>
+       <string notr="true">background-color: rgb(197, 197, 197);
+</string>
       </property>
       <property name="text">
        <string>File Select</string>
@@ -132,7 +133,7 @@
        <string notr="true">background-color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
-       <string>Selected File: </string>
+       <string>Selected File: No File Specified</string>
       </property>
      </widget>
     </item>
@@ -170,7 +171,7 @@
        <string notr="true">background-color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
-       <string>Output Directory:</string>
+       <string>Output Directory: No Output Directory Specified</string>
       </property>
      </widget>
     </item>
@@ -228,6 +229,9 @@
       </property>
       <property name="focusPolicy">
        <enum>Qt::ClickFocus</enum>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
       </property>
       <property name="autoFillBackground">
        <bool>false</bool>

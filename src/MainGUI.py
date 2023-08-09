@@ -28,21 +28,29 @@ class MainGUI(QMainWindow):
         print(self.algorithm_selection_box.currentText())
 
     def handle_file_select(self):
-        print("Handling file selection...")
-        options = QFileDialog.Options()
-        options |= QFileDialog.ReadOnly
-        selected_image_file = QFileDialog.getOpenFileName(self, "Open Image File", options=options)
+        # print("Handling file selection...")
+        options = QFileDialog.Options() # Creation 'Options' objects
+        options |= QFileDialog.ReadOnly # Force user to only select already existing files
+        file_filter = "Images (*.jpg *.png)" # User can only select .jpg and .png file types
+
+        # store path of selected image file
+        selected_image_file, _ = QFileDialog.getOpenFileName(self, "Select Image File", "", file_filter, options=options)
 
         if selected_image_file:
-            print("Selected Image File:", selected_image_file)
-            # Here, you can use the selected directory for saving your data
+            # print("Selected Image File:", selected_image_file)
+            self.selected_file_label.setText(selected_image_file) # Modify label to show path of selected image file
+        else:
+            QMessageBox.warning(self, "Warning!", "No image file was selected.") # Warn user that no image file was selected
+ 
     
     def handle_select_output_directory(self):
-        print("Handling output direction selection...")
-        options = QFileDialog.Options()
-        options |= QFileDialog.ShowDirsOnly | QFileDialog.DontUseNativeDialog
+        # print("Handling output direction selection...")
+        options = QFileDialog.Options() # Creation 'Options' objects
+        options |= QFileDialog.ShowDirsOnly # Show only directories
         output_directory = QFileDialog.getExistingDirectory(self, "Select Output Directory", options=options)
 
         if output_directory:
-            print("Selected Output Directory:", output_directory)
-            # Here, you can use the selected directory for saving your data
+            # print("Selected Output Directory:", output_directory)
+            self.selected_output_directory_label.setText(output_directory)
+        else:
+            QMessageBox.warning(self, "Warning!", "No output directory was selected.")
