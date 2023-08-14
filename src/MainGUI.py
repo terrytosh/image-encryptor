@@ -1,5 +1,6 @@
 from PyQt5.QtWidgets import *
 from PyQt5 import uic
+from ActionHandler import ActionHandler
 
 class MainGUI(QMainWindow):
     def __init__(self):
@@ -27,12 +28,22 @@ class MainGUI(QMainWindow):
         self.output_directory = ""
 
     def handle_execute_action(self):
-        # Print current selections from QComboBox's
-        print(self.action_selection_box.currentText())
-        print(self.algorithm_selection_box.currentText())
-        # Print user selected image file and output directory
-        print(self.selected_image_file)
-        print(self.output_directory)
+        # Store user inputs actions
+        current_action = self.action_selection_box.currentText()
+        current_algorithm = self.algorithm_selection_box.currentText()
+
+        # Check for valid user input
+        if self.selected_image_file == "" or self.output_directory == "":
+            QMessageBox.warning(self, "Error!", "Select image file and output directory.")
+        else:
+            if current_action == "Encryption":
+                action_handler = ActionHandler(self.selected_image_file, self.output_directory)
+                action_handler.handle_encryption(current_algorithm)
+            elif current_action == "Decryption":
+                action_handler = ActionHandler(self.selected_image_file, self.output_directory)
+                action_handler.handle_decryption(current_algorithm)
+                    
+
 
     def handle_file_select(self):
         # print("Handling file selection...")

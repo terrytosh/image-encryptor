@@ -84,7 +84,7 @@
       </property>
       <item>
        <property name="text">
-        <string>Algorithm 1</string>
+        <string>XOR</string>
        </property>
       </item>
       <item>
@@ -259,7 +259,7 @@
      <x>0</x>
      <y>0</y>
      <width>866</width>
-     <height>24</height>
+     <height>23</height>
     </rect>
    </property>
    <property name="styleSheet">
