@@ -36,9 +36,11 @@ class MainGUI(QMainWindow):
         if self.selected_image_file == "" or self.output_directory == "":
             QMessageBox.warning(self, "Error!", "Select image file and output directory.")
         else:
+            # Handle encryption
             if current_action == "Encryption":
                 action_handler = ActionHandler(self.selected_image_file, self.output_directory)
                 action_handler.handle_encryption(current_algorithm)
+            # Handle decryption
             elif current_action == "Decryption":
                 action_handler = ActionHandler(self.selected_image_file, self.output_directory)
                 action_handler.handle_decryption(current_algorithm)
