@@ -35,6 +35,8 @@ class MainGUI(QMainWindow):
         # Check for valid user input
         if self.selected_image_file == "" or self.output_directory == "":
             QMessageBox.warning(self, "Error!", "Select image file and output directory.")
+        elif self.keyPasswordLineEdit.text() == "":
+            QMessageBox.warning(self, "Error!", "Please provide a key/password.")
         else:
             # Handle encryption
             if current_action == "Encryption":
