@@ -5,3 +5,7 @@ class XorEncryptor:
     def encrypt(self, data):
         encrypted_data = bytes([b ^ self.key for b in data])
         return encrypted_data
+    
+    def decrypt(self, data):
+        decrypted_data = bytes([b ^ self.key for b in data])
+        return decrypted_data

@@ -23,4 +23,15 @@ class ActionHandler:
 
     def handle_decryption(self, algorithm):
         print("Handling Decryption with", algorithm)
-        # Implement your decryption logic here
+        if algorithm == "XOR":
+            with open(self.selected_image_file, 'rb') as file:
+                image_data = file.read()
+            
+            xor_encryptor = XorEncryptor()
+            decrypted_data = xor_encryptor.decrypt(image_data)
+
+            output_path = os.path.join(self.output_directory, "decrypted_image.png")
+            with open(output_path, 'wb') as file:
+                file.write(decrypted_data)
+
+            print("XOR Decryption complete. Decrypted image saved at:", output_path)
