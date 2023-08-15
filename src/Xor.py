@@ -1,6 +1,6 @@
 from PIL import Image
 
-class XorEncryptor:
+class Xor:
     def __init__(self, selected_image_file, output_path):
         self.key = (255, 155, 55)  # Example key
         self.selected_image_file = selected_image_file
@@ -26,12 +26,30 @@ class XorEncryptor:
         # Save the encrypted image to the specified output path
         encrypted_image.save(self.output_path)
 
-        print(self.output_path)
-
         # Close the images
         image.close()
         encrypted_image.close()
     
-    def decrypt(self, data):
-        decrypted_data = bytes([b ^ 0x55 for b in data])
-        return decrypted_data
+    def decrypt(self):
+        # Open the image file
+        image = Image.open(self.selected_image_file)
+
+        # Get pixel data as a list of tuples (R, G, B) for RGB images or (L,) for grayscale images
+        pixel_data = list(image.getdata())
+
+        # Perform XOR decryption on each pixel
+        decrypted_pixel_data = []
+        for pixel in pixel_data:
+            decrypted_pixel = tuple([(p ^ k) for p, k in zip(pixel, self.key)])
+            decrypted_pixel_data.append(decrypted_pixel)
+        
+        # Create a new image with decrypted pixel data
+        decrypted_image = Image.new(image.mode, image.size)
+        decrypted_image.putdata(decrypted_pixel_data)
+
+        # Save the encrypted image to the specified output path
+        decrypted_image.save(self.output_path)
+
+        # Close the images
+        image.close()
+        decrypted_image.close()

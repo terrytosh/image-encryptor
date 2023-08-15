@@ -1,4 +1,4 @@
-from XorEncryptor import XorEncryptor
+from Xor import Xor
 import os
 
 class ActionHandler:
@@ -7,26 +7,21 @@ class ActionHandler:
         self.output_directory = output_directory
 
     def handle_encryption(self, algorithm):
+
         print("Handling Encryption with", algorithm)
+        output_path = os.path.join(self.output_directory, "encrypted_image.png")
 
         if algorithm == "XOR":
-            output_path = os.path.join(self.output_directory, "encrypted_image.png")
-            xor_encryptor = XorEncryptor(self.selected_image_file, output_path)
+            xor_encryptor = Xor(self.selected_image_file, output_path)
             xor_encryptor.encrypt()
             print("XOR Encryption complete. Encrypted image saved at:", output_path)
 
     def handle_decryption(self, algorithm):
+
         print("Handling Decryption with", algorithm)
+        output_path = os.path.join(self.output_directory, "decrypted_image.png")
 
         if algorithm == "XOR":
-            with open(self.selected_image_file, 'rb') as file:
-                image_data = file.read()
-            
-            output_path = os.path.join(self.output_directory, "decrypted_image.png")
-            xor_encryptor = XorEncryptor(self.selected_image_file, output_path)
-            decrypted_data = xor_encryptor.decrypt(image_data)
-
-            with open(output_path, 'wb') as file:
-                file.write(decrypted_data)
-
+            xor_decryptor = Xor(self.selected_image_file, output_path)
+            xor_decryptor.decrypt()
             print("XOR Decryption complete. Decrypted image saved at:", output_path)
