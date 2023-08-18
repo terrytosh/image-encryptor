@@ -2,8 +2,8 @@ from PIL import Image
 import random
 
 class PixelShuffler:
-    def __init__(self, selected_image_file, output_path):
-        self.key = "secret_shuffling_key"  # Example key
+    def __init__(self, selected_image_file, output_path, key):
+        self.key = key 
         self.selected_image_file = selected_image_file
         self.output_path = output_path
 
