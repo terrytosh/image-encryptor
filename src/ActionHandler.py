@@ -20,6 +20,12 @@ class ActionHandler:
             pixel_shuffler = PixelShuffler(self.selected_image_file, output_path)
             pixel_shuffler.shuffle()
             print("Pixel shuffling encryption complete. Encrypted image saved at:", output_path)
+        elif algorithm == "XOR with Shuffling":
+            xor_encryptor = Xor(self.selected_image_file, output_path)
+            xor_encryptor.encrypt()
+            pixel_shuffler = PixelShuffler(self.selected_image_file, output_path)
+            pixel_shuffler.shuffle()
+            print("XOR with shuffling encryption complete. Encrypted image saved at:", output_path)
 
     def handle_decryption(self, algorithm):
 
@@ -34,3 +40,9 @@ class ActionHandler:
             pixel_shuffler = PixelShuffler(self.selected_image_file, output_path)
             pixel_shuffler.unshuffle()
             print("Pixel shuffling decryption complete. Decrypted image saved at:", output_path)
+        elif algorithm == "XOR with Shuffling":
+            xor_encryptor = Xor(self.selected_image_file, output_path)
+            xor_encryptor.decrypt()
+            pixel_shuffler = PixelShuffler(self.selected_image_file, output_path)
+            pixel_shuffler.unshuffle()
+            print("XOR with shuffling decryption complete. Encrypted image saved at:", output_path)
