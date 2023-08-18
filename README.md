@@ -21,3 +21,5 @@ pip install Pillow
 - XOR
 
 - Pixel Shuffling
+
+- XOR with Shuffling
