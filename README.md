@@ -19,3 +19,5 @@ pip install Pillow
 ## Current Techniques Implemented:
 
 - XOR
+
+- Pixel Shuffling
