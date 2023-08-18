@@ -11,7 +11,11 @@ class ActionHandler:
     def handle_encryption(self, algorithm):
 
         print("Handling Encryption with", algorithm)
-        output_path = os.path.join(self.output_directory, "encrypted_image.png")
+        
+        # Get the base name of the selected image file
+        image_base_name = os.path.basename(self.selected_image_file)
+        output_file_name = f"{os.path.splitext(image_base_name)[0]}_encrypted.jpg"
+        output_path = os.path.join(self.output_directory, output_file_name)
 
         if algorithm == "XOR":
             xor_encryptor = Xor(self.selected_image_file, output_path, self.key)
@@ -31,7 +35,11 @@ class ActionHandler:
     def handle_decryption(self, algorithm):
 
         print("Handling Decryption with", algorithm)
-        output_path = os.path.join(self.output_directory, "decrypted_image.png")
+
+        # Get the base name of the selected image file
+        image_base_name = os.path.basename(self.selected_image_file)
+        output_file_name = f"{os.path.splitext(image_base_name)[0]}_decrypted.jpg"
+        output_path = os.path.join(self.output_directory, output_file_name)
 
         if algorithm == "XOR":
             xor_decryptor = Xor(self.selected_image_file, output_path, self.key)
