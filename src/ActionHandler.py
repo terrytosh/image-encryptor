@@ -31,4 +31,6 @@ class ActionHandler:
             xor_decryptor.decrypt()
             print("XOR Decryption complete. Decrypted image saved at:", output_path)
         elif algorithm == "Pixel Shuffling":
+            pixel_shuffler = PixelShuffler(self.selected_image_file, output_path)
+            pixel_shuffler.unshuffle()
             print("Pixel shuffling decryption complete. Decrypted image saved at:", output_path)
