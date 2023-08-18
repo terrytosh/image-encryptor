@@ -1,4 +1,5 @@
 from Xor import Xor
+from PixelShuffler import PixelShuffler
 import os
 
 class ActionHandler:
@@ -14,7 +15,11 @@ class ActionHandler:
         if algorithm == "XOR":
             xor_encryptor = Xor(self.selected_image_file, output_path)
             xor_encryptor.encrypt()
-            print("XOR Encryption complete. Encrypted image saved at:", output_path)
+            print("XOR encryption complete. Encrypted image saved at:", output_path)
+        elif algorithm == "Pixel Shuffling":
+            pixel_shuffler = PixelShuffler(self.selected_image_file, output_path)
+            pixel_shuffler.shuffle()
+            print("Pixel shuffling encryption complete. Encrypted image saved at:", output_path)
 
     def handle_decryption(self, algorithm):
 
@@ -25,3 +30,5 @@ class ActionHandler:
             xor_decryptor = Xor(self.selected_image_file, output_path)
             xor_decryptor.decrypt()
             print("XOR Decryption complete. Decrypted image saved at:", output_path)
+        elif algorithm == "Pixel Shuffling":
+            print("Pixel shuffling decryption complete. Decrypted image saved at:", output_path)

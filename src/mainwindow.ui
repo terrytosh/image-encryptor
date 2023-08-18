@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>866</width>
-    <height>300</height>
+    <height>311</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -89,7 +89,7 @@
       </item>
       <item>
        <property name="text">
-        <string>Algorithm 2</string>
+        <string>Pixel Shuffling</string>
        </property>
       </item>
       <item>
